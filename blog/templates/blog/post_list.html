@@ -5,30 +5,16 @@
         <meta charset="utf-8">
     </head>
     <body>
-    <div>
-        <h1><a href="">onlytiancai 的博客</a></h1>
+        <div>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>发布于2018年09月04日</p>
-            <h2><a href="">我的第一篇博客</a></h2>
-            <p>
-            今天学习 Python。
-            今天学习 Python。
-            今天学习 Python。
-            今天学习 Python。
-            今天学习 Python。</p>
-        </div>
-
-        <div>
-            <p>发布于2018年09月05日</p>
-            <h2><a href="">我的第二篇博客</a></h2>
-            <p>
-            今天学习 Django。
-            今天学习 Django。
-            今天学习 Django。
-            今天学习 Django。
-            </p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
