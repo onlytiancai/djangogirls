@@ -1,17 +1,20 @@
+{% load staticfiles %}
 <!doctype html>
 <html>
     <head>
-        <title>onlytiancai's blog</title>
+        <title>艾氪森的博客</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+        <div class="page-header">
+            <h1><a href="/">艾氪森的博客</a></h1>
         </div>
 
         {% for post in posts %}
-            <div>
-                <p>published: {{ post.published_date }}</p>
+            <div class="post">
+                <p>发布于: {{ post.published_date }}</p>
                 <h1><a href="">{{ post.title }}</a></h1>
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>
